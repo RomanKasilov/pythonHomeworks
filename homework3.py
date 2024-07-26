@@ -11,7 +11,6 @@
 """
 
 from typing import Self
-import timeit
 
 
 class Rectangle:
@@ -61,7 +60,6 @@ r2 = Rectangle(5, 6)
 
 
 class Human:
-    # __slots__ = ('name', 'age')
 
     def __init__(self, name, age):
         self.name = name
@@ -75,8 +73,6 @@ class Cinderella(Human):
         super().__init__(name, age)
         self.foot_size = foot_size
         Cinderella.__count += 1
-
-    __slots__ = 'foot_size',
 
     def __repr__(self):
         return str(self.__dict__)
@@ -94,8 +90,6 @@ class Prince(Human):
         super().__init__(name, age)
         self.shoe_size = shoe_size
 
-    __slots__ = 'shoe_size',
-
     def find_cinderella(self, cinderellas: list[Cinderella]):
         print([cinderella for cinderella in cinderellas if self.shoe_size == cinderella.foot_size])
 
@@ -108,4 +102,3 @@ c1 = Cinderella('valya', 30, 36)
 prinz = Prince('fedya', 19, 36)
 prinz.find_cinderella(cinderellas_list)
 Cinderella.get_count()
-
