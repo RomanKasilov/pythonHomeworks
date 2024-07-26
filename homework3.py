@@ -140,5 +140,5 @@ class Cinderella(Human):
 c1 = Cinderella('valya', 30, 36)
 """
 
-# it = timeit.timeit("Cinderella('valya', 30, 36)", setup=my_setup, number=10000000)
-# print(it)
+it = timeit.timeit("Cinderella('valya', 30, 36)", setup=my_setup, number=1)
+print(it)
