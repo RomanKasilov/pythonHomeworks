@@ -108,37 +108,4 @@ c1 = Cinderella('valya', 30, 36)
 prinz = Prince('fedya', 19, 36)
 prinz.find_cinderella(cinderellas_list)
 Cinderella.get_count()
-my_setup = """
-class Human:
 
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-
-class Cinderella(Human):
-    __count = 0
-
-    def __init__(self, name: str, age: int, foot_size: int):
-        super().__init__(name, age)
-        self.foot_size = foot_size
-        Cinderella.__count += 1
-
-
-
-    def __repr__(self):
-        return str(self.__dict__)
-
-    @classmethod
-    def get_count(cls):
-        print(Cinderella.__count)
-
-    def get_self(self):
-        return self.name
-        
-c1 = Cinderella('valya', 30, 36)
-"""
-
-it = timeit.timeit("Cinderella('valya', 30, 36)", setup=my_setup, number=1)
-print(it)
